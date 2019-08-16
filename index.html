@@ -6,10 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Slap-Game</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
+<span> <span id="health"> </span> </span>
 
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <img id="windu"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Darth_Sidious.png/170px-Darth_Sidious.png" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <button class="jedi" onclick="slap('slap')">Slap</button>
+        <button class="jedi-kick" onclick="kick('kick')">kick</button>
+        <button class="jedi-punch" onclick="punch('punch')">punch</button>
+      </div>
+    </div>
+  </div>
 
+
+
+  <script src="app.js"></script>
 </body>
 
 </html>
