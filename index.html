@@ -10,21 +10,37 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
-<span> <span id="health"> </span> </span>
+<span> <span id="palpatine-health"> </span> </span>
+<span> <span id="Palpatine-Name"> </span></span> >
+<span> <span id="Palpatine-hits"></span></span>
+
+<span> <span id="windu-health"> </span> </span>
+<span> <span id="windu-Name"> </span></span> >
+<span> <span id="windu-hits"></span></span>
 
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-6">
-        <img id="windu"
+      <div class="col-12">
+        <img class="mace "
+          src="https://mail.google.com/mail/u/0?ui=2&ik=af4278023a&attid=0.1&permmsgid=msg-a:r8032924499958893773&th=16c9cb04167bef40&view=att&disp=safe&realattid=f_jzeq42f70"
+          alt="">
+        <img class="palpatine" id="Palpatine"
           src="https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Darth_Sidious.png/170px-Darth_Sidious.png" alt="">
       </div>
     </div>
     <div class="row">
-      <div class="col-6">
-        <button class="jedi" onclick="slap('slap')">Slap</button>
-        <button class="jedi-kick" onclick="kick('kick')">kick</button>
-        <button class="jedi-punch" onclick="punch('punch')">punch</button>
+      <div class="col-12">
+        <div class="sith-attack">
+          <button class="sith-slap" onclick="slap('slap')">Slap</button>
+          <button class="sith-kick" onclick="kick('kick')">kick</button>
+          <button class="sith-punch" onclick="punch()">punch</button>
+        </div>
+        <div class="jedi-attack">
+          <button class="jedi-slap" onclick="slap('slap')">Slap</button>
+          <button class="jedi-kick" onclick="kick('kick')">kick</button>
+          <button class="jedi-punch" onclick="punch()">punch</button>
+        </div>
       </div>
     </div>
   </div>
