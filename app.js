@@ -1,5 +1,5 @@
 let palpatine = {
-  name = "The Senate",
+  name: "The Senate",
   health: 150,
   attacks: {
     special: 25,
@@ -10,7 +10,7 @@ let palpatine = {
 }
 
 let Windu = {
-  name = Mace,
+
   health: 150,
   attacks: {
     saber: 20,
@@ -61,24 +61,24 @@ function update() {
   healthElem.textContent = health.toString();
 
   let NameElem = document.querySelector("#Name");
-  NameElem.textContent = name.toString();
+  NameElem.textContent = name;
+
+  let hitsElem = document.querySelector("#hits");
+  hitsElem.textContent = hits.toString();
+}
+
+/**
+ * need to set up for both players change Elems to sith or jedi
+ */
+function update() {
+  let healthElem = document.querySelector("#health");
+  healthElem.textContent = health.toString();
+
+  let NameElem = document.querySelector("#Name");
+  NameElem.textContent = name;
 
   let hitsElem = document.querySelector("#hits");
   hitsElem.textContent = hits.toString();
 
+}
 
-  /**
-   * need to set up for both players change Elems to sith or jedi
-   */
-  function update() {
-    let healthElem = document.querySelector("#health");
-    healthElem.textContent = health.toString();
-
-    let NameElem = document.querySelector("#Name");
-    NameElem.textContent = name.toString();
-
-    let hitsElem = document.querySelector("#hits");
-    hitsElem.textContent = hits.toString();
-
-  }
-  update()
