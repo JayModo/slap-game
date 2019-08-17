@@ -1,84 +1,123 @@
+
+
+let specials = {
+  lightSaber: { name: 'lightSaber', modifier: 7, description: 'you brought a knife to a saber fight' },
+  execution: { name: 'execution', modifier: 15, description: 'party is over' },
+  dualWield: { name: 'dualWield', modifier: 10, description: '2 always beats 1' }
+}
+
+
+
 let palpatine = {
-  name: "The Senate",
   health: 150,
+  hits: 0,
   attacks: {
-    special: 25,
+    spin: 25,
     lightning: 15,
     force: 10
   },
-  mobility: 30
+  specials: [specials.lightSaber, specials.dualWield],
+
 }
 
 let Windu = {
-
   health: 150,
+  hits: 0,
   attacks: {
     saber: 20,
     strike: 10
   },
-  mobility: 50
+  specials: [specials.lightSaber, specials.execution],
 }
 
 
 
-let health = 100;
-
-let hits = 0
-
-
-/**
- * slap, punch , kick need to be duplicated and changed to sith or jedi attacks
- */
-
-function slap() {
-  let slap = 1
-  if (slap) {
-    health--
-    hits++
-  } update()
-
-}
-
-
-function punch() {
-  health -= 5
-  hits++
-  update()
-}
 
 
 
-function kick() {
-  health -= 10
-  hits++
-  update()
+
+
+//if windus health is equal or less than 50 then windu can add execution to his attacks
+
+//function execution() {
+//specials.execution == Windu.specials[1]
+//palpatine.health -= 25
+//sithUpdate()
+//}
+function setspecial() {
+
+  palpatine.attacks.force = palpatine.specials[0].modifier++
+  if (Windu.health >= 50)
+    palpatine.specials[1]
+  palpatine.health--
+  sithUpdate()
+  jediUpdate()
 }
 
 
 
-function update() {
-  let healthElem = document.querySelector("#health");
-  healthElem.textContent = health.toString();
 
-  let NameElem = document.querySelector("#Name");
-  NameElem.textContent = name;
-
-  let hitsElem = document.querySelector("#hits");
-  hitsElem.textContent = hits.toString();
+function force() {
+  Windu.health -= 10
+  palpatine.hits++
+  jediUpdate()
 }
+function lightning() {
+  Windu.health -= 15
+  palpatine.hits++
+  jediUpdate()
+}
+function spin() {
+  Windu.health -= 25
+  palpatine.hits++
+  jediUpdate()
+}
+
+
+
+
+function saber() {
+
+  palpatine.health -= 20
+  Windu.hits++
+  sithUpdate()
+
+}
+function strike() {
+  palpatine.health -= 10
+  Windu.hits++
+  sithUpdate()
+}
+//function lightning() {
+//palpatine.health -= 5
+//Windu.hits++
+//jediUpdate()
+//}
+
+
+
+function sithUpdate() {
+
+  let palpatineHealthElem = document.querySelector("#palpatine-health")
+  palpatineHealthElem.textContent = palpatine.health.toString();
+
+  let palpatineHitsElem = document.querySelector("#Palpatine-hits")
+  palpatineHitsElem.textContent = palpatine.hits.toString();
+}
+
+
+
 
 /**
  * need to set up for both players change Elems to sith or jedi
  */
-function update() {
-  let healthElem = document.querySelector("#health");
-  healthElem.textContent = health.toString();
+function jediUpdate() {
+  let winduHealthElem = document.querySelector("#windu-health");
+  winduHealthElem.textContent = Windu.health.toString();
 
-  let NameElem = document.querySelector("#Name");
-  NameElem.textContent = name;
-
-  let hitsElem = document.querySelector("#hits");
-  hitsElem.textContent = hits.toString();
+  let winduHitsElem = document.querySelector("#windu-hits");
+  winduHitsElem.textContent = Windu.hits.toString();
 
 }
+
 

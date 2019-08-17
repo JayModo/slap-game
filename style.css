@@ -1,6 +1,17 @@
+.modifier{
+  text-align: center
+}
+
+
+
+
+
 .mace{
   float: right
 }
 .jedi-attack{
+  float: right
+}
+.jedi-stats{
   float: right
 }
