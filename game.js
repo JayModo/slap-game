@@ -12,17 +12,16 @@ function update() {
   //let gameOverElem = document.querySelector('#gameOver')
   // gameOverElem.textContent = 
 
-
-
+  let pushPowerElem = document.getElementById('pushPower')
 
 }
 
 
 // object that will hold our items
 let storage = {
-  lightsaber: { name: 'lightsaber', modifier: 5, description: 'its so bright' },
+  lightsaber: { name: 'lightsaber', modifier: 4, description: 'its so bright' },
   force: { name: 'force', modifier: 5, description: 'what was that' },
-  dualwield: { name: 'dual-wield', modifier: 5, description: 'double the fun' }
+  dualwield: { name: 'dual-wield', modifier: 10, description: 'double the fun' }
 }
 alert("start game")
 let target = {
@@ -33,52 +32,40 @@ let target = {
 
 
 
-
-
+//function that will take a variable at 0 using a for add up each storage item to 0 to get value to modifiers totals
+//target items
 function givepower() {
   let modTot = 0;
-  for (let i = 0; i < storage.length; i++) {
-    let item = target.items[i]
-    modTot += item.modifier
+  for (let i = 0; i < target.items.length; i++) {
+    //let item = target.items[i]
+    modTot += target.items[i].modifier
+
   }
   return modTot
 
 }
-debugger
 //this will push the array from items to the object items
-function pushPower(index) {
-  target.items.push(storage[index])
+function pushPower(itemName) {
+  target.items.push(storage[itemName])
   console.log(target.items)
-  update()
 }
 
 
-
+//so now givepower is returning our mod total add that to original attack if applied
 function slap() {
-  if (givepower() > 0)
-    target.health = target.health - (5 + lightsaber.modifier)
-  else {
-    target.health--
-  }
+  target.health = target.health - (1 + givepower())
+
   target.hits++
   update()
 
 }
 function punch() {
-  if (givepower() > 0)
-    target.health = target.health - (5 + givepower())
-  else {
-    target.health -= 5
-  }
+  target.health = target.health - (5 + givepower())
   target.hits++
   update()
 }
 function kick() {
-  if (givepower() > 0)
-    target.health = target.health - (10 + givepower())
-  else {
-    target.health -= 10
-  }
+  target.health = target.health - (10 + givepower())
   target.hits++
   update()
 }
@@ -86,7 +73,7 @@ function kick() {
 
 let lightsaber = {
   name: 'Lightsaber',
-  modifier: 5,
+  modifier: 4,
   description: 'its so bright!'
 }
 let force = {
@@ -96,7 +83,7 @@ let force = {
 }
 let dualWield = {
   name: 'dual-wield',
-  modifier: 5,
+  modifier: 10,
   description: 'double the fun'
 }
 
