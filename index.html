@@ -10,30 +10,46 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
-<span id="GameOver"></span>
-<header><span id="hits"><span></span>
-  </span>
-  <span id="health"><span> </span></span>
-  <span id="Name"><span>Palpatine</span></span></header>
-<span><span id="modifiers"></span></span>
 
-<body>
-  <img class="palpatine" id="Palpatine"
-    src="https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Darth_Sidious.png/170px-Darth_Sidious.png" alt="">
-
-
-  <footer><button onclick="slap()">slap</button>
-    <button onclick="punch()">punch</button>
-    <button onclick="kick()">kick</button>
-    <h3>specials</h3>
-    <button id="lightsaber" onclick="pushPower('lightsaber')">lightsaber</button>
-    <button id="force" onclick="pushPower('force')">force</button>
-    <button id="dualwield" onclick="pushPower('dualwield')">dualwield</button>
-
-  </footer>
 
 
 
+<body>
+  <div class="container-fluid" style="text-align: center">
+    <div class="row justify-content-lg-center">
+      <div class="col-12 justify-content-lg-center">
+
+        <span id="hits"><span></span>
+        </span>
+        <h5>Hits</h5>
+        <span id="health"><span> </span></span>
+        <h5>Health</h5>
+        <span id="Name"><span>Palpatine</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="text-align: center">
+    <div class="row">
+      <div class="col-12 justify-content-lg-center" style="align-content: center">
+        <img class="palpatine" id="Palpatine"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Darth_Sidious.png/170px-Darth_Sidious.png" alt="">
+
+
+        <footer><button class="btn btn-primary" onclick="slap()">slap</button>
+          <button class="btn btn-primary" onclick="punch()">punch</button>
+          <button class="btn btn-primary" onclick="kick()">kick</button>
+          <h3>specials</h3>
+          <button class="btn btn-warning" id="lightsaber" onclick="pushPower('lightsaber')">lightsaber</button>
+          <button class="btn btn-warning" id="force" onclick="pushPower('force')">force</button>
+          <button class="btn btn-warning" id="dualwield" onclick="pushPower('dualwield')">dualwield</button>
+
+        </footer>
+
+
+
+      </div>
+    </div>
+  </div>
   <script src="game.js"></script>
 </body>
 

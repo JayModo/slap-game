@@ -32,22 +32,25 @@ let target = {
 
 
 
+//this will push the array from items to the object items
+function pushPower(itemName) {
+  target.items.push(storage[itemName])
+  console.log(target.items)
+}
 //function that will take a variable at 0 using a for add up each storage item to 0 to get value to modifiers totals
 //target items
 function givepower() {
   let modTot = 0;
   for (let i = 0; i < target.items.length; i++) {
     //let item = target.items[i]
-    modTot += target.items[i].modifier
+    modTot = target.items[i].modifier
+    if (target.items[i] < 0)
+      target.items[i] = 0;
+
 
   }
   return modTot
 
-}
-//this will push the array from items to the object items
-function pushPower(itemName) {
-  target.items.push(storage[itemName])
-  console.log(target.items)
 }
 
 
